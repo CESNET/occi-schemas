@@ -1,2 +1,103 @@
-{ "$schema": "http://json-schema.org/schema#" }
+{
+	"$schema": "http://json-schema.org/schema#"
+	"id": "http://http://schemas.ogf.org/occi/core#"
+
+	"definitions": {
+
+		"resource": {
+			"kind": String,
+			"mixins": Array,
+			"attributes": Object,
+			"actions": Array,
+			"id": String,
+			"links": Array,
+			"summary": String,
+			"title": String,
+		}
+
+		"action_invocation": {
+			"action": String,
+			"attributes": Object
+		}
+
+		"link": {
+			"kind": String,
+			"mixins": Array,
+			"attributes": Object,
+			"actions": Array,
+			"id": String,
+			"source": String,
+			"target": String,
+			"rel": String,
+			"title": String
+		}
+
+		"kind": {
+			"term": String,
+			"scheme": String,
+			"title": String,
+			"attributes": Object,
+			"actions": Array,
+			"parent": Array,
+			"location": String
+		}
+
+		"mixin": {
+			"term": String,
+			"scheme": String,
+			"title": String,
+			"attributes": Object,
+			"actions": Array,
+			"depends": Array,
+			"applies": Array,
+			"location": String
+		}
+
+		"action": {
+			"term": String,
+			"scheme": String,
+			"title": String,
+			"attributes": Object
+		}
+
+		"resource_collection": {
+			"resources": []
+		}
+
+		"link_collection": {
+			"links": []
+		}
+
+		"kind_collection": {
+			"kinds": []
+		}
+
+		"mixin_collection": {
+			"mixins": []
+		}
+
+		"action_collection": {
+			"actions": []
+		}
+
+		"attribute": {
+			"one": {
+				"two": {
+					"three": Number|String|Boolean|Object
+				}
+			}
+		}
+
+		"attribute_description": {
+			"mutable": Boolean,
+			"required": Boolean,
+			"type": String,
+			"default": String | Number | Boolean,
+			"description": String
+		}
+
+	}
+
+}
+
 
