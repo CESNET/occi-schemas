@@ -1,99 +1,112 @@
 {
-	"$schema": "http://json-schema.org/schema#"
-	"id": "http://http://schemas.ogf.org/occi/core#"
+	"$schema": "http://json-schema.org/schema#",
+	"id": "http://http://schemas.ogf.org/occi/core#",
 
 	"definitions": {
 
 		"resource": {
-			"kind": String,
-			"mixins": Array,
-			"attributes": Object,
-			"actions": Array,
-			"id": String,
-			"links": Array,
-			"summary": String,
-			"title": String,
-		}
+			"kind": { "type": "string" },
+			"mixins": { "type": "array" },
+			"attributes": { "type": "object" },
+			"actions": { "type": "array" },
+			"id": { "type": "string" },
+			"links": { "type": "array" },
+			"summary": { "type": "string" },
+			"title": { "type": "string" }
+		},
 
 		"action_invocation": {
-			"action": String,
-			"attributes": Object
-		}
+			"action": { "type": "string" },
+			"attributes": { "type": "object" }
+		},
 
 		"link": {
-			"kind": String,
-			"mixins": Array,
-			"attributes": Object,
-			"actions": Array,
-			"id": String,
-			"source": String,
-			"target": String,
-			"rel": String,
-			"title": String
-		}
+			"kind": { "type": "string" },
+			"mixins": { "type": "array" },
+			"attributes": { "type": "object" },
+			"actions": { "type": "array" },
+			"id": { "type": "string" },
+			"source": { "type": "string" },
+			"target": { "type": "string" },
+			"rel": { "type": "string" },
+			"title": { "type": "string" }
+		},
 
 		"kind": {
-			"term": String,
-			"scheme": String,
-			"title": String,
-			"attributes": Object,
-			"actions": Array,
-			"parent": Array,
-			"location": String
-		}
+			"term": { "type": "string" },
+			"scheme": { "type": "string" },
+			"title": { "type": "string" },
+			"attributes": { "type": "object" },
+			"actions": { "type": "array" },
+			"parent": { "type": "array" },
+			"location": { "type": "string" }
+		},
 
 		"mixin": {
-			"term": String,
-			"scheme": String,
-			"title": String,
-			"attributes": Object,
-			"actions": Array,
-			"depends": Array,
-			"applies": Array,
-			"location": String
-		}
+			"term": { "type": "string" },
+			"scheme": { "type": "string" },
+			"title": { "type": "string" },
+			"attributes": { "type": "object" },
+			"actions": { "type": "array" },
+			"depends": { "type": "array" },
+			"applies": { "type": "array" },
+			"location": { "type": "string" }
+		},
 
 		"action": {
-			"term": String,
-			"scheme": String,
-			"title": String,
-			"attributes": Object
-		}
+			"term": { "type": "string" },
+			"scheme": { "type": "string" },
+			"title": { "type": "string" },
+			"attributes": { "type": "object" }
+		},
 
 		"resource_collection": {
-			"resources": []
-		}
+			"resources": { "type": "array" }
+		},
 
 		"link_collection": {
-			"links": []
-		}
+			"links": { "type": "array" }
+		},
 
 		"kind_collection": {
-			"kinds": []
-		}
+			"kinds": { "type": "array" }
+		},
 
 		"mixin_collection": {
-			"mixins": []
-		}
+			"mixins": { "type": "array" }
+		},
 
 		"action_collection": {
-			"actions": []
-		}
+			"actions": { "type": "array" }
+		},
 
 		"attribute": {
 			"one": {
 				"two": {
-					"three": Number|String|Boolean|Object
+					"three": { 
+						"oneOf": [
+							{ "type": "number" },
+							{ "type": "string" },
+							{ "type": "boolean" },
+							{ "type": "object" }
+						]
+					}
 				}
 			}
-		}
+		},
 
 		"attribute_description": {
-			"mutable": Boolean,
-			"required": Boolean,
-			"type": String,
-			"default": String | Number | Boolean,
-			"description": String
+			"mutable": { "type": "boolean" },
+			"required": { "type": "boolean" },
+			"type": { "type": "string" },
+			"default": {
+				"oneOf": [
+					{ "type": "number" },
+					{ "type": "string" },
+					{ "type": "boolean" }
+				]
+			},
+			"description": { "type": "string" }
 		}
 
 	}
