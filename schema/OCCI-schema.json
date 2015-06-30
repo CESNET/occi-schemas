@@ -81,18 +81,15 @@
 		},
 
 		"attribute": {
-			"one": {
-				"two": {
-					"three": { 
-						"oneOf": [
-							{ "type": "number" },
-							{ "type": "string" },
-							{ "type": "boolean" },
-							{ "type": "object" }
-						]
-					}
+			"oneOf": [
+				{ "type": "number" },
+				{ "type": "string" },
+				{ "type": "boolean" },
+				{
+					"type": "object",
+					"$ref": "#/definitions/attribute"
 				}
-			}
+			]
 		},
 
 		"attribute_description": {
