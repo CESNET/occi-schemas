@@ -1,7 +1,4 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"id": "http://schemas.ogf.org/occi/core#",
-
 	"definitions": {
 
 		"resource": {
@@ -43,14 +40,17 @@
 		},
 
 		"mixin": {
-			"term": { "type": "string" },
-			"scheme": { "type": "string" },
-			"title": { "type": "string" },
-			"attributes": { "type": "object" },
-			"actions": { "type": "array" },
-			"depends": { "type": "array" },
-			"applies": { "type": "array" },
-			"location": { "type": "string" }
+			"type": "object",
+			"properties": {
+				"term": { "type": "string", "required": true },
+				"scheme": { "type": "string", "required": true },
+				"title": { "type": "string" },
+				"attributes": { "type": "object" },
+				"actions": { "type": "array" },
+				"depends": { "type": "array" },
+				"applies": { "type": "array" },
+				"location": { "type": "string" }
+			}
 		},
 
 		"action": {
@@ -73,7 +73,12 @@
 		},
 
 		"mixin_collection": {
-			"mixins": { "type": "array" }
+			"mixins": { 
+				"type": "array",
+				"items": {
+					"type":  { "$ref": "#definitions/mixin" }
+				}
+			}
 		},
 
 		"action_collection": {
