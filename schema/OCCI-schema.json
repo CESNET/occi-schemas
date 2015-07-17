@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "http://http://schemas.ogf.org/occi/core#",
+	"id": "http://schemas.ogf.org/occi/core#",
 
 	"definitions": {
 
