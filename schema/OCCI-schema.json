@@ -195,8 +195,19 @@
 		}
 	},
 
-	"$ref": "#definitions/model"
-
+	"anyOf": [
+		{ "$ref": "#/definitions/kkind" },
+		{ "$ref": "#/definitions/kmixin" },
+		{ "$ref": "#/definitions/kaction" },
+		{ "$ref": "#/definitions/kattribute" },
+		{ "$ref": "#/definitions/kattribute_description" },
+		{ "$ref": "#/definitions/kind_collection" },
+		{ "$ref": "#/definitions/mixin_collection" },
+		{ "$ref": "#/definitions/action_collection" },
+		{ "$ref": "#/definitions/resource_collection" },
+		{ "$ref": "#/definitions/link_collection" },
+		{ "$ref": "#/definitions/model" }
+	]
 }
 
 
