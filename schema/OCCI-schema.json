@@ -196,11 +196,11 @@
 	},
 
 	"anyOf": [
-		{ "$ref": "#/definitions/kkind" },
-		{ "$ref": "#/definitions/kmixin" },
-		{ "$ref": "#/definitions/kaction" },
-		{ "$ref": "#/definitions/kattribute" },
-		{ "$ref": "#/definitions/kattribute_description" },
+		{ "$ref": "#/definitions/kind" },
+		{ "$ref": "#/definitions/mixin" },
+		{ "$ref": "#/definitions/action" },
+		{ "$ref": "#/definitions/attribute" },
+		{ "$ref": "#/definitions/attribute_description" },
 		{ "$ref": "#/definitions/kind_collection" },
 		{ "$ref": "#/definitions/mixin_collection" },
 		{ "$ref": "#/definitions/action_collection" },
