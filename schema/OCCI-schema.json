@@ -41,9 +41,10 @@
 
 		"mixin": {
 			"type": "object",
+			"required": ["term", "scheme", "location"],
 			"properties": {
-				"term": { "type": "string", "required": true },
-				"scheme": { "type": "string", "required": true },
+				"term": { "type": "string" },
+				"scheme": { "type": "string" },
 				"title": { "type": "string" },
 				"attributes": { "type": "object" },
 				"actions": { "type": "array" },
@@ -73,11 +74,9 @@
 		},
 
 		"mixin_collection": {
-			"mixins": { 
-				"type": "array",
-				"items": {
-					"type":  { "$ref": "#definitions/mixin" }
-				}
+			"type": "array",
+			"items": {
+				"$ref": "#definitions/mixin"
 			}
 		},
 
@@ -111,7 +110,9 @@
 			"description": { "type": "string" }
 		}
 
-	}
+	},
+
+	"$ref": "#definitions/mixin_collection"
 
 }
 
