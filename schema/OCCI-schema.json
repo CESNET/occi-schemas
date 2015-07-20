@@ -87,37 +87,62 @@
 		},
 
 		"resource_collection": {
-			"type": "array",
-			"items": {
-				"$ref": "#definitions/resource"
+			"type": "object",
+			"properties": {
+				"resources": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/resource"
+					}
+				}
 			}
 		},
 
 		"link_collection": {
-			"type": "array",
-			"items": {
-				"$ref": "#definitions/link"
+			"type": "object",
+			"properties": {
+				"links": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/link"
+					}
+				}
 			}
 		},
 
 		"kind_collection": {
-			"type": "array",
-			"items": {
-				"$ref": "#definitions/kind"
+			"type": "object",
+			"properties": {
+				"kinds": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/kind"
+					}
+				}
 			}
 		},
 
 		"mixin_collection": {
-			"type": "array",
-			"items": {
-				"$ref": "#definitions/mixin"
+			"type": "object",
+			"properties": {
+				"mixins": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/mixin"
+					}
+				}
 			}
 		},
 
 		"action_collection": {
-			"type": "array",
-			"items": {
-				"$ref": "#definitions/action"
+			"type": "object",
+			"properties": {
+				"actions": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/action"
+					}
+				}
 			}
 		},
 
@@ -156,11 +181,11 @@
 		"model": {
 			"type": "object",
 			"properties": {
-				"kinds": { "$ref": "#/definitions/kind_collection" },
-				"mixins": { "$ref": "#/definitions/mixin_collection" },
-				"actions": { "$ref": "#/definitions/action_collection" },
-				"resources": { "$ref": "#/definitions/resource_collection" },
-				"links": { "$ref": "#/definitions/link_collection" }
+				"$ref": "#/definitions/kind_collection",
+				"$ref": "#/definitions/mixin_collection",
+				"$ref": "#/definitions/action_collection",
+				"$ref": "#/definitions/resource_collection",
+				"$ref": "#/definitions/link_collection"
 			}
 		}
 	},
