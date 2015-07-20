@@ -88,6 +88,7 @@
 
 		"resource_collection": {
 			"type": "object",
+			"required": ["resources"],
 			"properties": {
 				"resources": {
 					"type": "array",
@@ -100,6 +101,7 @@
 
 		"link_collection": {
 			"type": "object",
+			"required": ["links"],
 			"properties": {
 				"links": {
 					"type": "array",
@@ -112,6 +114,7 @@
 
 		"kind_collection": {
 			"type": "object",
+			"required": ["kinds"],
 			"properties": {
 				"kinds": {
 					"type": "array",
@@ -124,6 +127,7 @@
 
 		"mixin_collection": {
 			"type": "object",
+			"required": ["mixins"],
 			"properties": {
 				"mixins": {
 					"type": "array",
@@ -136,6 +140,7 @@
 
 		"action_collection": {
 			"type": "object",
+			"required": ["actions"],
 			"properties": {
 				"actions": {
 					"type": "array",
@@ -190,7 +195,7 @@
 		}
 	},
 
-	"$ref": "#definitions/model"
+	"$ref": "#definitions/resource_collection"
 
 }
 
