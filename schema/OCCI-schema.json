@@ -1,46 +1,63 @@
 {
 	"definitions": {
 
+		"array_of_strings": {
+			"type": "array",
+			"items": { "type": "string" }
+		},
+
 		"resource": {
-			"TODO": true,
-			"kind": { "type": "string" },
-			"mixins": { "type": "array" },
-			"attributes": { "type": "object" },
-			"actions": { "type": "array" },
-			"id": { "type": "string" },
-			"links": { "type": "array" },
-			"summary": { "type": "string" },
-			"title": { "type": "string" }
+			"type": "object",
+			"required": ["kind", "id"],
+			"properties": {
+				"kind": { "type": "string" },
+				"mixins": { "$ref": "#/definitions/array_of_strings" },
+				"attributes": { "type": "object" },
+				"actions": { "$ref": "#/definitions/array_of_strings" },
+				"id": { "type": "string" },
+				"links": { "$ref": "#/definitions/array_of_strings" },
+				"summary": { "type": "string" },
+				"title": { "type": "string" }
+			}
 		},
 
 		"action_invocation": {
-			"TODO": true,
-			"action": { "type": "string" },
-			"attributes": { "type": "object" }
+			"type": "object",
+			"required": ["action"],
+			"properties": {
+				"action": { "type": "string" },
+				"attributes": { "type": "object" }
+			}
 		},
 
 		"link": {
-			"TODO": true,
-			"kind": { "type": "string" },
-			"mixins": { "type": "array" },
-			"attributes": { "type": "object" },
-			"actions": { "type": "array" },
-			"id": { "type": "string" },
-			"source": { "type": "string" },
-			"target": { "type": "string" },
-			"rel": { "type": "string" },
-			"title": { "type": "string" }
+			"type": "object",
+			"required": ["kind", "id", "target"],
+			"properties": {
+				"kind": { "type": "string" },
+				"mixins": { "$ref": "#/definitions/array_of_strings" },
+				"attributes": { "type": "object" },
+				"actions": { "$ref": "#/definitions/array_of_strings" },
+				"id": { "type": "string" },
+				"source": { "type": "string" },
+				"target": { "type": "string" },
+				"rel": { "type": "string" },
+				"title": { "type": "string" }
+			}
 		},
 
 		"kind": {
-			"TODO": true,
-			"term": { "type": "string" },
-			"scheme": { "type": "string" },
-			"title": { "type": "string" },
-			"attributes": { "type": "object" },
-			"actions": { "type": "array" },
-			"parent": { "type": "array" },
-			"location": { "type": "string" }
+			"type": "object",
+			"required": ["term", "scheme"],
+			"properties": {
+				"term": { "type": "string" },
+				"scheme": { "type": "string" },
+				"title": { "type": "string" },
+				"attributes": { "type": "object" },
+				"actions": { "$ref": "#/definitions/array_of_strings" },
+				"parent": { "type": "string" },
+				"location": { "type": "string" }
+			}
 		},
 
 		"mixin": {
@@ -51,34 +68,43 @@
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
 				"attributes": { "type": "object" },
-				"actions": { "type": "array" },
-				"depends": { "type": "array" },
-				"applies": { "type": "array" },
+				"actions": { "$ref": "#/definitions/array_of_strings" },
+				"depends": { "$ref": "#/definitions/array_of_strings" },
+				"applies": { "$ref": "#/definitions/array_of_strings" },
 				"location": { "type": "string" }
 			}
 		},
 
 		"action": {
-			"TODO": true,
-			"term": { "type": "string" },
-			"scheme": { "type": "string" },
-			"title": { "type": "string" },
-			"attributes": { "type": "object" }
+			"type": "object",
+			"required": ["term", "scheme"],
+			"properties": {
+				"term": { "type": "string" },
+				"scheme": { "type": "string" },
+				"title": { "type": "string" },
+				"attributes": { "type": "object" }
+			}
 		},
 
 		"resource_collection": {
-			"TODO": true,
-			"resources": { "type": "array" }
+			"type": "array",
+			"items": {
+				"$ref": "#definitions/resource"
+			}
 		},
 
 		"link_collection": {
-			"TODO": true,
-			"links": { "type": "array" }
+			"type": "array",
+			"items": {
+				"$ref": "#definitions/link"
+			}
 		},
 
 		"kind_collection": {
-			"TODO": true,
-			"kinds": { "type": "array" }
+			"type": "array",
+			"items": {
+				"$ref": "#definitions/kind"
+			}
 		},
 
 		"mixin_collection": {
@@ -89,41 +115,57 @@
 		},
 
 		"action_collection": {
-			"TODO": true,
-			"actions": { "type": "array" }
+			"type": "array",
+			"items": {
+				"$ref": "#definitions/action"
+			}
 		},
 
 		"attribute": {
-			"TODO": true,
-			"oneOf": [
-				{ "type": "number" },
-				{ "type": "string" },
-				{ "type": "boolean" },
-				{
-					"type": "object",
-					"$ref": "#/definitions/attribute"
-				}
-			]
-		},
-
-		"attribute_description": {
-			"TODO": true,
-			"mutable": { "type": "boolean" },
-			"required": { "type": "boolean" },
-			"type": { "type": "string" },
-			"default": {
+			"type": "object",
+			"properties": {
 				"oneOf": [
 					{ "type": "number" },
 					{ "type": "string" },
-					{ "type": "boolean" }
+					{ "type": "boolean" },
+					{
+						"type": "object",
+						"properties": { "$ref": "#/definitions/attribute" }
+					}	
 				]
-			},
-			"description": { "type": "string" }
-		}
+			}
+		},
 
+		"attribute_description": {
+			"type": "object",
+			"properties": {
+				"mutable": { "type": "boolean" },
+				"required": { "type": "boolean" },
+				"type": { "type": "string" },
+				"default": {
+					"oneOf": [
+						{ "type": "number" },
+						{ "type": "string" },
+						{ "type": "boolean" }
+					]
+				},
+				"description": { "type": "string" }
+			}
+		},
+
+		"model": {
+			"type": "object",
+			"properties": {
+				"kinds": { "$ref": "#/definitions/kind_collection" },
+				"mixins": { "$ref": "#/definitions/mixin_collection" },
+				"actions": { "$ref": "#/definitions/action_collection" },
+				"resources": { "$ref": "#/definitions/resource_collection" },
+				"links": { "$ref": "#/definitions/link_collection" }
+			}
+		}
 	},
 
-	"$ref": "#definitions/mixin_collection"
+	"$ref": "#definitions/model"
 
 }
 
