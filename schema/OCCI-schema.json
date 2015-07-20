@@ -2,6 +2,7 @@
 	"definitions": {
 
 		"resource": {
+			"TODO": true,
 			"kind": { "type": "string" },
 			"mixins": { "type": "array" },
 			"attributes": { "type": "object" },
@@ -13,11 +14,13 @@
 		},
 
 		"action_invocation": {
+			"TODO": true,
 			"action": { "type": "string" },
 			"attributes": { "type": "object" }
 		},
 
 		"link": {
+			"TODO": true,
 			"kind": { "type": "string" },
 			"mixins": { "type": "array" },
 			"attributes": { "type": "object" },
@@ -30,6 +33,7 @@
 		},
 
 		"kind": {
+			"TODO": true,
 			"term": { "type": "string" },
 			"scheme": { "type": "string" },
 			"title": { "type": "string" },
@@ -55,6 +59,7 @@
 		},
 
 		"action": {
+			"TODO": true,
 			"term": { "type": "string" },
 			"scheme": { "type": "string" },
 			"title": { "type": "string" },
@@ -62,14 +67,17 @@
 		},
 
 		"resource_collection": {
+			"TODO": true,
 			"resources": { "type": "array" }
 		},
 
 		"link_collection": {
+			"TODO": true,
 			"links": { "type": "array" }
 		},
 
 		"kind_collection": {
+			"TODO": true,
 			"kinds": { "type": "array" }
 		},
 
@@ -81,10 +89,12 @@
 		},
 
 		"action_collection": {
+			"TODO": true,
 			"actions": { "type": "array" }
 		},
 
 		"attribute": {
+			"TODO": true,
 			"oneOf": [
 				{ "type": "number" },
 				{ "type": "string" },
@@ -97,6 +107,7 @@
 		},
 
 		"attribute_description": {
+			"TODO": true,
 			"mutable": { "type": "boolean" },
 			"required": { "type": "boolean" },
 			"type": { "type": "string" },
