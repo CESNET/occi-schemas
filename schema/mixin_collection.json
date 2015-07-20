@@ -1,4 +1,0 @@
-{
-	"type": { "$ref": "OCCI-schema.json#definitions/mlixin_collection" }
-}
-
