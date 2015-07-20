@@ -185,17 +185,17 @@
 
 		"model": {
 			"type": "object",
-			"properties": {
-				"$ref": "#/definitions/kind_collection",
-				"$ref": "#/definitions/mixin_collection",
-				"$ref": "#/definitions/action_collection",
-				"$ref": "#/definitions/resource_collection",
-				"$ref": "#/definitions/link_collection"
-			}
+			"allOf": [
+				{ "$ref": "#/definitions/kind_collection" },
+				{ "$ref": "#/definitions/mixin_collection" },
+				{ "$ref": "#/definitions/action_collection" },
+				{ "$ref": "#/definitions/resource_collection" },
+				{ "$ref": "#/definitions/link_collection" }
+			]
 		}
 	},
 
-	"$ref": "#definitions/resource_collection"
+	"$ref": "#definitions/model"
 
 }
 
