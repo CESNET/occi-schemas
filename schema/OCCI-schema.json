@@ -57,7 +57,7 @@
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
-				"attributes": { "$ref": "#/definitions/attribute" },
+				"attributes": { "$ref": "#/definitions/attribute_description" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"parent": { "type": "string" },
 				"location": { "type": "string" }
@@ -72,7 +72,7 @@
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
-				"attributes": { "$ref": "#/definitions/attribute" },
+				"attributes": { "$ref": "#/definitions/attribute_description" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"depends": { "$ref": "#/definitions/array_of_strings" },
 				"applies": { "$ref": "#/definitions/array_of_strings" },
@@ -88,7 +88,7 @@
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
-				"attributes": { "$ref": "#/definitions/attribute" }
+				"attributes": { "$ref": "#/definitions/attribute_description" }
 			}
 		},
 
@@ -179,6 +179,7 @@
 				{
 					"type": "object",
 					"additionalProperties": false,
+					"minProperties": 1,
 					"properties": {
 						"mutable": { "type": "boolean" },
 						"required": { "type": "boolean" },
