@@ -208,13 +208,39 @@
 
 		"model": {
 			"type": "object",
-			"allOf": [
-				{ "$ref": "#/definitions/kind_collection" },
-				{ "$ref": "#/definitions/mixin_collection" },
-				{ "$ref": "#/definitions/action_collection" },
-				{ "$ref": "#/definitions/resource_collection" },
-				{ "$ref": "#/definitions/link_collection" }
-			]
+			"additionalProperties": false,
+			"properties": {
+				"resources": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/resource"
+					}
+				},
+				"links": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/link"
+					}
+				},
+				"mixins": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/mixin"
+					}
+				},
+				"kinds": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/kind"
+					}
+				},
+				"actions": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/action"
+					}
+				}
+			}
 		}
 	},
 

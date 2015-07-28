@@ -98,6 +98,7 @@
 	],
 	"links": [
 		{
+			"target":"/network/b7d55bf4−7057−5113−85c8−141871bf7635",
 			"kind": "http://schemas.ogf.org/occi/core#link",
 			"attributes": {
 				"occi": {
@@ -109,8 +110,5 @@
 			"id": "35e6f510-4617-465d-9f92-e1079b78f420",
 			"rel": "http://schemas.ogf.org/occi/core#link"
 		}
-	],
-	"action": {
-		"action": "http://schemas.ogf.org/occi/core#action_instance"
-	}
+	]
 }
