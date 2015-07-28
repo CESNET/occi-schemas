@@ -13,7 +13,7 @@
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
-				"attributes": { "type": "object" },
+				"attributes": { "$ref": "#/definitions/attribute" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
 				"links": { "$ref": "#/definitions/array_of_strings" },
@@ -28,7 +28,7 @@
 			"additionalProperties": false,
 			"properties": {
 				"action": { "type": "string" },
-				"attributes": { "type": "object" }
+				"attributes": { "$ref": "#/definitions/attribute" }
 			}
 		},
 
@@ -39,7 +39,7 @@
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
-				"attributes": { "type": "object" },
+				"attributes": { "$ref": "#/definitions/attribute" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
 				"source": { "type": "string" },
@@ -57,7 +57,7 @@
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
-				"attributes": { "type": "object" },
+				"attributes": { "$ref": "#/definitions/attribute" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"parent": { "type": "string" },
 				"location": { "type": "string" }
@@ -72,7 +72,7 @@
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
-				"attributes": { "type": "object" },
+				"attributes": { "$ref": "#/definitions/attribute" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"depends": { "$ref": "#/definitions/array_of_strings" },
 				"applies": { "$ref": "#/definitions/array_of_strings" },
@@ -88,7 +88,7 @@
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
 				"title": { "type": "string" },
-				"attributes": { "type": "object" }
+				"attributes": { "$ref": "#/definitions/attribute" }
 			}
 		},
 
