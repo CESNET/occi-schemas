@@ -191,7 +191,8 @@
 								{ "type": "boolean" }
 							]
 						},
-						"description": { "type": "string" }
+						"description": { "type": "string" },
+						"pattern": { "type": "string" }
 					}
 				},
 				{
@@ -199,8 +200,7 @@
 					"additionalProperties": false,
 					"patternProperties": {
 						".+": {
-							"type": "object",
-							"properties": { "$ref": "#/definitions/attribute_description" }
+							"$ref": "#/definitions/attribute_description"
 						}
 					}
 				}

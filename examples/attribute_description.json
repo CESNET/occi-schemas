@@ -2,7 +2,7 @@
 	"occi": {
 		"core": {
 			"id": {
-				"typpe": "string",
+				"type": "string",
 				"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
 			},
 			"title": {
