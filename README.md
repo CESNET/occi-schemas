@@ -14,7 +14,7 @@ The project directory has three subdirectories:
 
 ## Using the JSON Schema
 
-The main schema file (`OCCI-schema.json`) contains all the definitions and should validate any type of OCCI message. It cannot, however, check if the incomming message is of the expected type. In other words, it will check if a JSON rendering is valid, but not if it is a valid `action`.
+The main schema file (`OCCI-schema.json`) contains all the definitions and should validate any type of OCCI message. It cannot, however, check if the incomming message is of the expected type. In other words, it will check if a JSON rendering is valid, but not if it is, for example, a valid `Action`.
 
 Other schemas in the `schemas` directory only reference definitions in the main schema, and contain no definitions of their own. They are used to check specific classes of messages.
 
