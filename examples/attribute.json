@@ -1,1 +1,51 @@
-{"occi":{"core":{"id":{"type":"string","pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"},"title":{"type":"string","mutable":true,"pattern":".*"},"summary":{"type":"string","mutable":true,"pattern":".*"}},"compute":{"architecture":{"type":"string","mutable":true,"pattern":"x86|x64"},"cores":{"type":"number","mutable":true,"pattern":".*"},"hostname":{"type":"string","mutable":true,"pattern":"(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*"},"memory":{"type":"number","mutable":true,"pattern":".*"},"speed":{"type":"number","mutable":true,"pattern":".*"},"state":{"type":"string","pattern":"inactive|active|suspended|error"}}}}
+{
+	"occi": {
+		"core": {
+			"id": {
+				"typpe": "string",
+				"pattern": "[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+			},
+			"title": {
+				"type": "string",
+				"mutable": true,
+				"pattern": ".*"
+			},
+			"summary": {
+				"type": "string",
+				"mutable": true,
+				"pattern": ".*"
+			}
+		},
+		"compute": {
+			"architecture": {
+				"type": "string",
+				"mutable": true,
+				"pattern": "x86|x64"
+			},
+			"cores": {
+				"type": "number",
+				"mutable": true,
+				"pattern": ".*"
+			},
+			"hostname": {
+				"type": "string",
+				"mutable": true,
+				"pattern": "(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*"
+			},
+			"memory": {
+				"type": "number",
+				"mutable": true,
+				"pattern": ".*"
+			},
+			"speed": {
+				"type": "number",
+				"mutable": true,
+				"pattern": ".*"
+			},
+			"state": {
+				"type": "string",
+				"pattern": "inactive|active|suspended|error"
+			}
+		}
+	}
+}

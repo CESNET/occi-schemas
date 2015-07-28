@@ -163,18 +163,15 @@
 		},
 
 		"attribute": {
-			"type": "object",
-			"properties": {
-				"oneOf": [
-					{ "type": "number" },
-					{ "type": "string" },
-					{ "type": "boolean" },
-					{
-						"type": "object",
-						"properties": { "$ref": "#/definitions/attribute" }
-					}
-				]
-			}
+			"oneOf": [
+				{ "type": "number" },
+				{ "type": "boolean" },
+				{ "type": "string" },
+				{
+					"type": "object" ,
+					"additionalProperties": { "$ref": "#/definitions/attribute" }
+				}
+			]
 		},
 
 		"attribute_description": {
