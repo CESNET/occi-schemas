@@ -178,20 +178,35 @@
 		},
 
 		"attribute_description": {
-			"type": "object",
-			"properties": {
-				"mutable": { "type": "boolean" },
-				"required": { "type": "boolean" },
-				"type": { "type": "string" },
-				"default": {
-					"oneOf": [
-						{ "type": "number" },
-						{ "type": "string" },
-						{ "type": "boolean" }
-					]
+			"oneOf": [
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"mutable": { "type": "boolean" },
+						"required": { "type": "boolean" },
+						"type": { "type": "string" },
+						"default": {
+							"oneOf": [
+								{ "type": "number" },
+								{ "type": "string" },
+								{ "type": "boolean" }
+							]
+						},
+						"description": { "type": "string" }
+					}
 				},
-				"description": { "type": "string" }
-			}
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"patternProperties": {
+						".+": {
+							"type": "object",
+							"properties": { "$ref": "#/definitions/attribute_description" }
+						}
+					}
+				}
+			]
 		},
 
 		"model": {
