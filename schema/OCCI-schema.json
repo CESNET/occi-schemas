@@ -9,6 +9,7 @@
 		"resource": {
 			"type": "object",
 			"required": ["kind", "id"],
+			"additionalProperties": false,
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
@@ -24,6 +25,7 @@
 		"action_invocation": {
 			"type": "object",
 			"required": ["action"],
+			"additionalProperties": false,
 			"properties": {
 				"action": { "type": "string" },
 				"attributes": { "type": "object" }
@@ -33,6 +35,7 @@
 		"link": {
 			"type": "object",
 			"required": ["kind", "id", "target"],
+			"additionalProperties": false,
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
@@ -49,6 +52,7 @@
 		"kind": {
 			"type": "object",
 			"required": ["term", "scheme"],
+			"additionalProperties": false,
 			"properties": {
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
@@ -63,6 +67,7 @@
 		"mixin": {
 			"type": "object",
 			"required": ["term", "scheme", "location"],
+			"additionalProperties": false,
 			"properties": {
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
@@ -78,6 +83,7 @@
 		"action": {
 			"type": "object",
 			"required": ["term", "scheme"],
+			"additionalProperties": false,
 			"properties": {
 				"term": { "type": "string" },
 				"scheme": { "type": "string" },
@@ -89,6 +95,7 @@
 		"resource_collection": {
 			"type": "object",
 			"required": ["resources"],
+			"additionalProperties": false,
 			"properties": {
 				"resources": {
 					"type": "array",
@@ -102,6 +109,7 @@
 		"link_collection": {
 			"type": "object",
 			"required": ["links"],
+			"additionalProperties": false,
 			"properties": {
 				"links": {
 					"type": "array",
@@ -115,6 +123,7 @@
 		"kind_collection": {
 			"type": "object",
 			"required": ["kinds"],
+			"additionalProperties": false,
 			"properties": {
 				"kinds": {
 					"type": "array",
@@ -128,6 +137,7 @@
 		"mixin_collection": {
 			"type": "object",
 			"required": ["mixins"],
+			"additionalProperties": false,
 			"properties": {
 				"mixins": {
 					"type": "array",
@@ -141,6 +151,7 @@
 		"action_collection": {
 			"type": "object",
 			"required": ["actions"],
+			"additionalProperties": false,
 			"properties": {
 				"actions": {
 					"type": "array",
