@@ -6,9 +6,11 @@ This is a JSON schema describing OCCI JSON Rendring, based on the lates version 
 
 The project directory has three subdirectories:
 
-| `schema` | The actual JSON schema files. |
-| `examples` | Example OCCI messages in JSON. |
-| `bin` | Command-line JSON validator based on Ruby. |
+| Directory | Purpose |
+| ----------:| ------------------------------------------ |
+| `schema`   | The actual JSON schema files.              |
+| `examples` | Example OCCI messages in JSON.             |
+| `bin`      | Command-line JSON validator based on Ruby. |
 
 ## Using the JSON Schema
 
