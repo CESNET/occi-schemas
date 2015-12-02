@@ -1,17 +1,8 @@
 {
-	"occi": {
-		"core": {
-			"id": "d51cc509-e1b7-4796-98a4-ccae05964ea8",
-			"title": "title",
-			"summary": "summary"
-		},
-		"compute": {
-			"architecture": "z80",
-			"cores": 1,
-			"hostname": "spectrum",
-			"memory": 64,
-			"speed": 1,
-			"state": "active"
-		}
-	}
+    "occi.compute.speed": 2,
+    "occi.compute.memory": 4,
+    "occi.compute.cores": 2,
+    "com.example.occi.templates.myosmixin": {
+        "mykey": "myvalue"
+    }
 }

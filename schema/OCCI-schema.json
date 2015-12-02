@@ -13,7 +13,7 @@
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
-				"attributes": { "$ref": "#/definitions/attribute" },
+				"attributes": { "$ref": "#/definitions/attributes" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
 				"links": { "$ref": "#/definitions/array_of_strings" },
@@ -28,7 +28,7 @@
 			"additionalProperties": false,
 			"properties": {
 				"action": { "type": "string" },
-				"attributes": { "$ref": "#/definitions/attribute" }
+				"attributes": { "$ref": "#/definitions/attributes" }
 			}
 		},
 
@@ -39,7 +39,7 @@
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
-				"attributes": { "$ref": "#/definitions/attribute" },
+				"attributes": { "$ref": "#/definitions/attributes" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
 				"source": { "type": "string" },
@@ -162,16 +162,17 @@
 			}
 		},
 
-		"attribute": {
-			"oneOf": [
-				{ "type": "number" },
-				{ "type": "boolean" },
-				{ "type": "string" },
-				{
-					"type": "object" ,
-					"additionalProperties": { "$ref": "#/definitions/attribute" }
-				}
-			]
+		"attributes": {
+			"type": "object",
+			"additionalProperties": {
+				"oneOf": [
+					{ "type": "number" },
+					{ "type": "boolean" },
+					{ "type": "string" },
+					{ "type": "object" },
+					{ "type": "array" }
+				]
+			}
 		},
 
 		"attribute_description": {
@@ -249,7 +250,7 @@
 		{ "$ref": "#/definitions/kind" },
 		{ "$ref": "#/definitions/mixin" },
 		{ "$ref": "#/definitions/action" },
-		{ "$ref": "#/definitions/attribute" },
+		{ "$ref": "#/definitions/attributes" },
 		{ "$ref": "#/definitions/attribute_description" },
 		{ "$ref": "#/definitions/kind_collection" },
 		{ "$ref": "#/definitions/mixin_collection" },

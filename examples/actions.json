@@ -1,17 +1,17 @@
 {
-"actions":[
-{
-"term":"stop",
-"scheme":"http://schemas.ogf.org/occi/infrastructure/compute/action#",
-"title":"StopComputeinstance",
-"attributes":{
-"method":{
-"mutable":true,
-"required":false,
-"type":"string",
-"default":"poweroff"
-}
-}
-}
-]
+    "actions":[
+        {
+            "term":"stop",
+            "scheme":"http://schemas.ogf.org/occi/infrastructure/compute/action#",
+            "title":"StopComputeinstance",
+            "attributes":{
+                "method":{
+                    "mutable":true,
+                    "required":false,
+                    "type":"string",
+                    "default":"poweroff"
+                }
+            }
+        }
+    ]
 }
