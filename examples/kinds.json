@@ -10,7 +10,12 @@
 		    "mutable":true,
 		    "required":false,
 		    "type":"string",
-		    "description":"Hostname of the compute resource"
+		    "description":"Hostname of the compute resource",
+		    "pattern": {
+			"$schema": "http://json-schema.org/draft-04/schema#",
+			"type": "string",
+			"pattern": "\S+"
+		    }
 		},
 		"occi.compute.state":{
 		    "mutable":false,

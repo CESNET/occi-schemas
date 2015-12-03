@@ -1,5 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "OCCI v. 1.2 JSON Rendering Schema",
 	"definitions": {
 
 		"array_of_strings": {
@@ -194,7 +195,7 @@
 							]
 						},
 						"description": { "type": "string" },
-						"pattern": { "type": "string" }
+						"pattern": { "type": "object" }
 					}
 				},
 				{
