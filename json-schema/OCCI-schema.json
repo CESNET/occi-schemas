@@ -9,6 +9,17 @@
 			"items": { "type": "string" }
 		},
 
+		"kinded_uri": {
+			"id": "#kinded_uri",
+			"type": "object",
+			"required": ["location"],
+			"additionalProperties": false,
+			"properties": {
+				"location": { "type": "string" },
+				"kind": { "type": "string" }
+			}
+		},
+
 		"resource": {
 			"id": "#resource",
 			"type": "object",
@@ -48,10 +59,8 @@
 				"attributes": { "$ref": "#/definitions/attributes" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
-				"source": { "type": "string" },
-				"source.kind": { "type": "string" },
-				"target": { "type": "string" },
-				"target.kind": { "type": "string" },
+				"source": { "$ref": "#/definitions/kinded_uri" },
+				"target": { "$ref": "#/definitions/kinded_uri" },
 				"rel": { "type": "string" },
 				"title": { "type": "string" }
 			}

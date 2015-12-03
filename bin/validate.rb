@@ -13,4 +13,3 @@ else
   puts "Usage:\n\n#{File.basename($PROGRAM_NAME)} <schema.json> <data.json>\n\nThe 'json-schema' gem is used to validate the data.\n\n"
   -1
 end
-
