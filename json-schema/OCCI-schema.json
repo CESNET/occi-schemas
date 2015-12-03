@@ -31,7 +31,12 @@
 				"attributes": { "$ref": "#/definitions/attributes" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
-				"links": { "$ref": "#/definitions/array_of_strings" },
+				"links": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/link"
+					}
+				},
 				"summary": { "type": "string" },
 				"title": { "type": "string" }
 			}
