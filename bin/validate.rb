@@ -8,8 +8,11 @@ if (ARGV.count == 2 and File.file?(ARGV[0]) and File.file?(ARGV[1]))
   iter=0
   out.each { |msg| puts "\##{iter += 1}:\t#{msg}\n" }
   
-  out.count
+  retval = out.count
 else
   puts "Usage:\n\n#{File.basename($PROGRAM_NAME)} <schema.json> <data.json>\n\nThe 'json-schema' gem is used to validate the data.\n\n"
-  -1
+  retval = -1
 end
+
+exit retval
+
