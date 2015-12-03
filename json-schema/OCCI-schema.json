@@ -1,4 +1,5 @@
 {
+	"id": "OCCI-schema.json",
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"title": "OCCI v. 1.2 JSON Rendering Schema",
 	"definitions": {
@@ -9,6 +10,7 @@
 		},
 
 		"resource": {
+			"id": "#resource",
 			"type": "object",
 			"required": ["kind", "id"],
 			"additionalProperties": false,
@@ -25,6 +27,7 @@
 		},
 
 		"action_invocation": {
+			"id": "#action_invocation",
 			"type": "object",
 			"required": ["action"],
 			"additionalProperties": false,
@@ -35,6 +38,7 @@
 		},
 
 		"link": {
+			"id": "#link",
 			"type": "object",
 			"required": ["kind", "id", "target", "source"],
 			"additionalProperties": false,
@@ -54,6 +58,7 @@
 		},
 
 		"kind": {
+			"id": "#kind",
 			"type": "object",
 			"required": ["term", "scheme"],
 			"additionalProperties": false,
@@ -69,6 +74,7 @@
 		},
 
 		"mixin": {
+			"id": "#mixin",
 			"type": "object",
 			"required": ["term", "scheme", "location"],
 			"additionalProperties": false,
@@ -85,6 +91,7 @@
 		},
 
 		"action": {
+			"id": "#action",
 			"type": "object",
 			"required": ["term", "scheme"],
 			"additionalProperties": false,
@@ -97,6 +104,7 @@
 		},
 
 		"resource_collection": {
+			"id": "#resource_collection",
 			"type": "object",
 			"required": ["resources"],
 			"additionalProperties": false,
@@ -111,6 +119,7 @@
 		},
 
 		"link_collection": {
+			"id": "#link_collection",
 			"type": "object",
 			"required": ["links"],
 			"additionalProperties": false,
@@ -125,6 +134,7 @@
 		},
 
 		"kind_collection": {
+			"id": "#kind_collection",
 			"type": "object",
 			"required": ["kinds"],
 			"additionalProperties": false,
@@ -139,6 +149,7 @@
 		},
 
 		"mixin_collection": {
+			"id": "#mixin_collection",
 			"type": "object",
 			"required": ["mixins"],
 			"additionalProperties": false,
@@ -153,6 +164,7 @@
 		},
 
 		"action_collection": {
+			"id": "#action_collection",
 			"type": "object",
 			"required": ["actions"],
 			"additionalProperties": false,
@@ -167,6 +179,7 @@
 		},
 
 		"attributes": {
+			"id": "#attributes",
 			"type": "object",
 			"additionalProperties": {
 				"oneOf": [
@@ -180,6 +193,7 @@
 		},
 
 		"attribute_description": {
+			"id": "#attribute_description",
 			"oneOf": [
 				{
 					"type": "object",
@@ -213,6 +227,7 @@
 		},
 
 		"model": {
+			"id": "#model",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
