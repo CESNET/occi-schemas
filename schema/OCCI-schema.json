@@ -36,7 +36,7 @@
 
 		"link": {
 			"type": "object",
-			"required": ["kind", "id", "target"],
+			"required": ["kind", "id", "target", "source"],
 			"additionalProperties": false,
 			"properties": {
 				"kind": { "type": "string" },
@@ -45,7 +45,9 @@
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
 				"source": { "type": "string" },
+				"source.kind": { "type": "string" },
 				"target": { "type": "string" },
+				"target.kind": { "type": "string" },
 				"rel": { "type": "string" },
 				"title": { "type": "string" }
 			}
