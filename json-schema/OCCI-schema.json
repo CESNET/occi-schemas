@@ -1,4 +1,7 @@
 {
+	"id": "OCCI-schema.json",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "OCCI v. 1.2 JSON Rendering Schema",
 	"definitions": {
 
 		"array_of_strings": {
@@ -6,50 +9,70 @@
 			"items": { "type": "string" }
 		},
 
+		"kinded_uri": {
+			"id": "#kinded_uri",
+			"type": "object",
+			"required": ["location"],
+			"additionalProperties": false,
+			"properties": {
+				"location": { "type": "string" },
+				"kind": { "type": "string" }
+			}
+		},
+
 		"resource": {
+			"id": "#resource",
 			"type": "object",
 			"required": ["kind", "id"],
 			"additionalProperties": false,
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
-				"attributes": { "$ref": "#/definitions/attribute" },
+				"attributes": { "$ref": "#/definitions/attributes" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
-				"links": { "$ref": "#/definitions/array_of_strings" },
+				"links": {
+					"type": "array",
+					"items": {
+						"$ref": "#definitions/link"
+					}
+				},
 				"summary": { "type": "string" },
 				"title": { "type": "string" }
 			}
 		},
 
 		"action_invocation": {
+			"id": "#action_invocation",
 			"type": "object",
 			"required": ["action"],
 			"additionalProperties": false,
 			"properties": {
 				"action": { "type": "string" },
-				"attributes": { "$ref": "#/definitions/attribute" }
+				"attributes": { "$ref": "#/definitions/attributes" }
 			}
 		},
 
 		"link": {
+			"id": "#link",
 			"type": "object",
-			"required": ["kind", "id", "target"],
+			"required": ["kind", "id", "target", "source"],
 			"additionalProperties": false,
 			"properties": {
 				"kind": { "type": "string" },
 				"mixins": { "$ref": "#/definitions/array_of_strings" },
-				"attributes": { "$ref": "#/definitions/attribute" },
+				"attributes": { "$ref": "#/definitions/attributes" },
 				"actions": { "$ref": "#/definitions/array_of_strings" },
 				"id": { "type": "string" },
-				"source": { "type": "string" },
-				"target": { "type": "string" },
+				"source": { "$ref": "#/definitions/kinded_uri" },
+				"target": { "$ref": "#/definitions/kinded_uri" },
 				"rel": { "type": "string" },
 				"title": { "type": "string" }
 			}
 		},
 
 		"kind": {
+			"id": "#kind",
 			"type": "object",
 			"required": ["term", "scheme"],
 			"additionalProperties": false,
@@ -65,6 +88,7 @@
 		},
 
 		"mixin": {
+			"id": "#mixin",
 			"type": "object",
 			"required": ["term", "scheme", "location"],
 			"additionalProperties": false,
@@ -81,6 +105,7 @@
 		},
 
 		"action": {
+			"id": "#action",
 			"type": "object",
 			"required": ["term", "scheme"],
 			"additionalProperties": false,
@@ -93,6 +118,7 @@
 		},
 
 		"resource_collection": {
+			"id": "#resource_collection",
 			"type": "object",
 			"required": ["resources"],
 			"additionalProperties": false,
@@ -107,6 +133,7 @@
 		},
 
 		"link_collection": {
+			"id": "#link_collection",
 			"type": "object",
 			"required": ["links"],
 			"additionalProperties": false,
@@ -121,6 +148,7 @@
 		},
 
 		"kind_collection": {
+			"id": "#kind_collection",
 			"type": "object",
 			"required": ["kinds"],
 			"additionalProperties": false,
@@ -135,6 +163,7 @@
 		},
 
 		"mixin_collection": {
+			"id": "#mixin_collection",
 			"type": "object",
 			"required": ["mixins"],
 			"additionalProperties": false,
@@ -149,6 +178,7 @@
 		},
 
 		"action_collection": {
+			"id": "#action_collection",
 			"type": "object",
 			"required": ["actions"],
 			"additionalProperties": false,
@@ -162,19 +192,22 @@
 			}
 		},
 
-		"attribute": {
-			"oneOf": [
-				{ "type": "number" },
-				{ "type": "boolean" },
-				{ "type": "string" },
-				{
-					"type": "object" ,
-					"additionalProperties": { "$ref": "#/definitions/attribute" }
-				}
-			]
+		"attributes": {
+			"id": "#attributes",
+			"type": "object",
+			"additionalProperties": {
+				"oneOf": [
+					{ "type": "number" },
+					{ "type": "boolean" },
+					{ "type": "string" },
+					{ "type": "object" },
+					{ "type": "array" }
+				]
+			}
 		},
 
 		"attribute_description": {
+			"id": "#attribute_description",
 			"oneOf": [
 				{
 					"type": "object",
@@ -192,7 +225,7 @@
 							]
 						},
 						"description": { "type": "string" },
-						"pattern": { "type": "string" }
+						"pattern": { "type": "object" }
 					}
 				},
 				{
@@ -208,6 +241,7 @@
 		},
 
 		"model": {
+			"id": "#model",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
@@ -249,7 +283,7 @@
 		{ "$ref": "#/definitions/kind" },
 		{ "$ref": "#/definitions/mixin" },
 		{ "$ref": "#/definitions/action" },
-		{ "$ref": "#/definitions/attribute" },
+		{ "$ref": "#/definitions/attributes" },
 		{ "$ref": "#/definitions/attribute_description" },
 		{ "$ref": "#/definitions/kind_collection" },
 		{ "$ref": "#/definitions/mixin_collection" },
